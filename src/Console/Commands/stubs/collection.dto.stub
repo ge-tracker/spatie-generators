@@ -1,0 +1,13 @@
+<?php
+
+namespace DummyNamespace;
+
+use Spatie\DataTransferObject\DataTransferObjectCollection;
+
+class DummyClass extends DataTransferObjectCollection
+{
+    public function current(): DummyDataObject
+    {
+        return parent::current();
+    }
+}
