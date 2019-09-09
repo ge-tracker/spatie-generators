@@ -2,8 +2,8 @@
 
 namespace GeTracker\SpatieGenerators;
 
-use App\Console\Commands\ActionMakeCommand;
-use App\Console\Commands\DTOMakeCommand;
+use GeTracker\SpatieGenerators\Console\Commands\ActionMakeCommand;
+use GeTracker\SpatieGenerators\Console\Commands\DTOMakeCommand;
 use Illuminate\Support\ServiceProvider;
 
 class SpatieGeneratorServiceProvider extends ServiceProvider

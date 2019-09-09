@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace GeTracker\SpatieGenerators\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
