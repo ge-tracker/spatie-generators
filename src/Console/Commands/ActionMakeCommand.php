@@ -2,7 +2,7 @@
 
 namespace GeTracker\SpatieGenerators\Console\Commands;
 
-use Illuminate\Console\GeneratorCommand;
+use GeTracker\SpatieGenerators\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 
 class ActionMakeCommand extends GeneratorCommand
@@ -59,14 +59,7 @@ class ActionMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        if ($this->option('module')) {
-            $rootNamespace = sprintf("%s\Modules\%s",
-                $rootNamespace,
-                str_replace('/', '\\', $this->option('module'))
-            );
-        }
-
-        return $rootNamespace . '\Actions';
+        return $this->getDomainNamespace($rootNamespace) . '\Actions';
     }
 
     /**
@@ -78,6 +71,7 @@ class ActionMakeCommand extends GeneratorCommand
     {
         return [
             ['module', 'm', InputOption::VALUE_OPTIONAL, 'Generate an action inside a module'],
+            ['domain', 'd', InputOption::VALUE_OPTIONAL, 'Generate an action inside a domain'],
         ];
     }
 }

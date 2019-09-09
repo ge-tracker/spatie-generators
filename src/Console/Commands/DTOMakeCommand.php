@@ -2,7 +2,7 @@
 
 namespace GeTracker\SpatieGenerators\Console\Commands;
 
-use Illuminate\Console\GeneratorCommand;
+use GeTracker\SpatieGenerators\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 
 class DTOMakeCommand extends GeneratorCommand
@@ -95,14 +95,7 @@ class DTOMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        if ($this->option('module')) {
-            $rootNamespace = sprintf("%s\Modules\%s",
-                $rootNamespace,
-                str_replace('/', '\\', $this->option('module'))
-            );
-        }
-
-        return $rootNamespace . '\DTO';
+        return $this->getDomainNamespace($rootNamespace) . '\DTO';
     }
 
     /**
@@ -114,6 +107,7 @@ class DTOMakeCommand extends GeneratorCommand
     {
         return [
             ['module', 'm', InputOption::VALUE_OPTIONAL, 'Generate a DTO inside a module'],
+            ['domain', 'd', InputOption::VALUE_OPTIONAL, 'Generate a DTO inside a domain'],
             ['collection', 'c', InputOption::VALUE_NONE, 'Create a DTO collection'],
         ];
     }
