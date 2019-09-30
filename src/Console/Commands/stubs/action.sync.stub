@@ -2,12 +2,8 @@
 
 namespace DummyNamespace;
 
-use Spatie\QueueableAction\QueueableAction;
-
 class DummyClass
 {
-    use QueueableAction;
-
     /**
      * Create a new action instance.
      *

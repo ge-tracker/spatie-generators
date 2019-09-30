@@ -47,11 +47,9 @@ class DTOMakeCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        if ($this->option('collection')) {
-            return __DIR__ . '/stubs/collection.dto.stub';
-        }
-
-        return __DIR__ . '/stubs/dto.stub';
+        return $this->option('collection')
+            ? __DIR__ . '/stubs/collection.dto.stub'
+            : __DIR__ . '/stubs/dto.stub';
     }
 
     /**
@@ -79,7 +77,7 @@ class DTOMakeCommand extends GeneratorCommand
      */
     protected function replaceDataObject($stub, $name)
     {
-        $class = str_replace($this->getNamespace($name).'\\', '', $name);
+        $class = str_replace($this->getNamespace($name) . '\\', '', $name);
         $dataObject = preg_replace('/(?:Data)?Collection/', 'Data', $class);
 
         return str_replace('DummyDataObject', $dataObject, $stub);
