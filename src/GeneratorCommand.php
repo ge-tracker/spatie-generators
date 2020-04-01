@@ -34,7 +34,7 @@ abstract class GeneratorCommand extends BaseGeneratorCommand
      */
     protected function getDomainNamespace($rootNamespace)
     {
-        if (is_null($this->option('domain')) && is_null($this->option('module'))) {
+        if ($this->option('domain') === null && $this->option('module') === null) {
             return $rootNamespace;
         }
 
