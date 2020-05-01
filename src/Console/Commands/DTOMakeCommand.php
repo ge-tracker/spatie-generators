@@ -7,38 +7,11 @@ use Symfony\Component\Console\Input\InputOption;
 
 class DTOMakeCommand extends GeneratorCommand
 {
-    /**
-     * The console command name.
-     *
-     * @var string
-     */
     protected $name = 'make:dto';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Create a new data transfer object (DTO)';
 
-    /**
-     * The type of class being generated.
-     *
-     * @var string
-     */
     protected $type = 'DTO';
-
-    /**
-     * Execute the console command.
-     *
-     * @return void
-     */
-    public function handle()
-    {
-        if (parent::handle() === false) {
-            return false;
-        }
-    }
 
     /**
      * Get the stub file for the generator.

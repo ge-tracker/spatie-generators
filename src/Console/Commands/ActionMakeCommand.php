@@ -7,38 +7,11 @@ use Symfony\Component\Console\Input\InputOption;
 
 class ActionMakeCommand extends GeneratorCommand
 {
-    /**
-     * The console command name.
-     *
-     * @var string
-     */
     protected $name = 'make:action';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Create a new action class';
 
-    /**
-     * The type of class being generated.
-     *
-     * @var string
-     */
     protected $type = 'Action';
-
-    /**
-     * Execute the console command.
-     *
-     * @return void
-     */
-    public function handle()
-    {
-        if (parent::handle() === false) {
-            return false;
-        }
-    }
 
     /**
      * Get the stub file for the generator.
