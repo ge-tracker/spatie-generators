@@ -15,8 +15,8 @@
         "php": "^7.4",
         "spatie/laravel-queueable-action": "^2.5",
         "spatie/data-transfer-object": "^2.0",
-        "illuminate/console": "^7.0",
-        "illuminate/support": "^7.0"
+        "illuminate/console": "^7.0|^8.0",
+        "illuminate/support": "^7.0|^8.0"
     },
     "autoload": {
         "psr-4": {
