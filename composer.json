@@ -12,7 +12,7 @@
     "license": "MIT",
     "homepage": "https://github.com/ge-tracker/spatie-generators",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4|^8.0",
         "spatie/laravel-queueable-action": "^2.5",
         "spatie/data-transfer-object": "^2.0",
         "illuminate/console": "^7.0|^8.0",
